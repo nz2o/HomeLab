@@ -17,7 +17,8 @@ apt install -y \
   glances \
   atop \
   mc \
-  bat
+  bat \
+  fonts-powerline
 
 apt autoremove -y
 
