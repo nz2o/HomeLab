@@ -29,6 +29,9 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/Proxmo
 ## DNS - Technitium
 Wait, a DNS for each node? I have a max of 3 nodes at a time, but I am really tired of when one of my nodes are off for maintenance, dealing with all services being done.
 Time for secondaries! Technitium can do it, and enhance privacy with recursion.
+
+I chose Technitium because.... Easy Web UI, Plugins, DNS Blocking, Logging, and recursion (not have to be beholden to ISP DNS). Lots of capability there.
+Other choices were vanilla Bind, Unbound, PiHole, Adguard, CoreDns, PowerDNS. None of them fit my use case.
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/technitiumdns.sh)"
 ```
