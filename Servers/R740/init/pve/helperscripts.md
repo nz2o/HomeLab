@@ -42,7 +42,12 @@ It needs PVESDNUser role, and also a new role with Datastore.AllocateSpace, Data
 Needs an API key...manually
 All done - need to set up datastores and backups later...
 
+## Remote Access
+Ok here's the deal. OpenVPN is commonly brute forced. Wireguard is a lil stronger, but a pain in the tail. Reverse proxy? Yah um, some services aren't super strong, and you need to consider overlay networking or oauth security.
 
+For security reasons, I am NOT telling what I'm doing. However, look around, decide what security level is best for you.... and have a good backup strategy along with monitoring.
+
+####Self hosting includes some responsibility to stay secure. You have been WARNED.
 
 
 
