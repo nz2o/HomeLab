@@ -26,3 +26,9 @@ apt-get install -y ipcalc net-tools
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/add-iptag.sh)"
 ```
 
+## DNS - Technitium
+Wait, a DNS for each node? I have a max of 3 nodes at a time, but I am really tired of when one of my nodes are off for maintenance, dealing with all services being done.
+Time for secondaries! Technitium can do it, and enhance privacy with recursion.
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/technitiumdns.sh)"
+```
