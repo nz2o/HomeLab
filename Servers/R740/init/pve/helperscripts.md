@@ -47,7 +47,7 @@ Ok here's the deal. OpenVPN is commonly brute forced. Wireguard is a lil stronge
 
 For security reasons, I am NOT telling what I'm doing. However, look around, decide what security level is best for you.... and have a good backup strategy along with monitoring.
 
-####Self hosting includes some responsibility to stay secure. You have been WARNED.
+#### Self hosting includes some responsibility to stay secure. You have been WARNED.
 
 
 
