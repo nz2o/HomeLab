@@ -49,5 +49,9 @@ For security reasons, I am NOT telling what I'm doing. However, look around, dec
 
 #### Self hosting includes some responsibility to stay secure. You have been WARNED.
 
-
+## OS VM or LXC? (Experimenting)
+Trying out an LXC for Debian.
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/debian.sh)"
+```
 
