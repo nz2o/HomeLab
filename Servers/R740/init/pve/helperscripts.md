@@ -20,3 +20,8 @@ None exists to hide nag popups. At least one thing is certain, you need to disab
 7. Time to test... Yay! that worked. Do it for other nodes now.
 8. Later....
 
+## Proxmox Backup Server
+Going to try this out. Will use outboard USB disks. Going to have to figure out mounts. Might have to reinstall it to do that.
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/proxmox-backup-server.sh)"
+```
