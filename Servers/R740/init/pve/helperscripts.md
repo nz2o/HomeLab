@@ -22,6 +22,15 @@ None exists to hide nag popups. At least one thing is certain, you need to disab
 
 ## Proxmox Backup Server
 Going to try this out. Will use outboard USB disks. Going to have to figure out mounts. Might have to reinstall it to do that.
+Make sure you define a root password - you will need that to make it work.
+Enable additional allowed FS mounts, and FUSE. Might need that later.
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/proxmox-backup-server.sh)"
 ```
+
+Ok, straight off, nag popup. Nag, nag, nag...
+Execute this within Proxmox Backup shell/console.
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/post-pbs-install.sh)"
+```
+Well THAT didn't work.
