@@ -33,4 +33,16 @@ Execute this within Proxmox Backup shell/console.
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/post-pbs-install.sh)"
 ```
-Well THAT didn't work.
+Well THAT didn't work. Had to do something to reboot the LXC. It wasn't super happy with me after this...but it works now.
+
+### Adding my first node (main server).
+See the previous. I want a separate user for this. pbs will be what I call it on the node.
+It needs PVESDNUser role, and also a new role with Datastore.AllocateSpace, Datastore.Audit, VM.Audit, VM.Backup.
+
+Needs an API key...manually
+All done - need to set up datastores and backups later...
+
+
+
+
+
