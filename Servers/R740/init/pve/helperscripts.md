@@ -108,3 +108,10 @@ echo "Each user will have a persistent XFCE session (reattaches on reconnect)."
 echo "SSH is ready for Docker CLI management."
 echo "Docker installed; logout/login for group permissions."
 ```
+
+Need to expand the disk too.
+```bash
+sudo apt install cloud-guest-utils -y
+sudo resize2fs /dev/sda1
+```
+
