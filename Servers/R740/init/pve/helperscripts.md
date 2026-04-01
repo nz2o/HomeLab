@@ -109,6 +109,11 @@ echo "Each user will have a persistent XFCE session (reattaches on reconnect)."
 echo "SSH is ready for Docker CLI management."
 echo "Docker installed; logout/login for group permissions."
 ```
+Need to expand the disk too.
+```bash
+sudo apt install cloud-guest-utils -y
+sudo resize2fs /dev/sda1
+```
 
 ## Choice Point: Tailscale, Netbird, Headscale, Cloudflare, VPN, etc
 Not going to tell what I used here. However, I'll tell you my experience.
@@ -127,11 +132,16 @@ Authentik: A little more fiddly.
 Keycloak: The goat. Red Hat stuff. Rock solid.
 There are more out there, but as you see, mileage varies by use case.
 
+## Reverse Proxy - for that which should face the world
+Ok, so you secured that service, right? RIGHT?
+Ok... just making sure.
 
+I'm not sold on a particular reverse proxy yet. There are just so many.
+Nginx: The goat, proxy, web server, etc.
+Nginx Proxy Manager: One of the originals, some say it isn't super secure. There is another version of this which might be a little better.
+Pangolin?
+Caddy: Dead simple, file based.
+Traefik: Plugins a plenty, used by some enterprises.
+There are more out there.
 
-Need to expand the disk too.
-```bash
-sudo apt install cloud-guest-utils -y
-sudo resize2fs /dev/sda1
-```
 
