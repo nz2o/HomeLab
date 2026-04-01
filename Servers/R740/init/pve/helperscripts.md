@@ -1,5 +1,6 @@
 # Favorite Helper Scripts
 These helper scripts are favorites for my primary node.
+It is important to note, LXC's memory values act as a hard quota, rather than reserved memory.
 
 ## Proxmox Datacenter Manager (PDM)
 First time trying this.
