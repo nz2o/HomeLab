@@ -109,6 +109,25 @@ echo "SSH is ready for Docker CLI management."
 echo "Docker installed; logout/login for group permissions."
 ```
 
+## Choice Point: Tailscale, Netbird, Headscale, Cloudflare, VPN, etc
+Not going to tell what I used here. However, I'll tell you my experience.
+
+Netbird: Wireguard with a pretty management interface, fully self hosted.
+Tailscale: Same, not fully self hosted, but you do get relays that you can use if the peer to peer connection can't work! Polished.
+Cloudflare: Zero trust that requires trust, and has terms of service. It's good for one or two, but I just don't like being beholden to things that don't belong to me/under my total control.
+OpenVPN: Well, it's OpenVPN. It's also fragile. It also is good for circumventing the Great Firewall of China. Great for distributed LAN parties on old games.
+Headscale: Local version of Tailscale
+Zerotier: Personal favorite, I said goodbye to hamachi with this.
+
+## Identity/IAM/IDP solution
+Authelia: Ideal for home labs.
+PocketID: No passwords if you're comfy with it.
+Authentik: A little more fiddly.
+Keycloak: The goat. Red Hat stuff. Rock solid.
+There are more out there, but as you see, mileage varies by use case.
+
+
+
 Need to expand the disk too.
 ```bash
 sudo apt install cloud-guest-utils -y
