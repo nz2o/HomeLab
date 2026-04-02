@@ -4,41 +4,53 @@
 :local finalList "US-ALLOW"
 :local ttl "7d"
 
-# Remove old temp list
+:log info "Starting US geo update..."
+
+# Cleanup temp list
 /ip firewall address-list remove [find list=$tmpList]
 
-# Download file (temporary)
+# Download file
 /tool fetch url=$url dst-path=us.zone mode=https
 :delay 2
 
-# File processing
-:local fileName "us.zone"
-:local fileSize [/file get $fileName size]
-:local offset 0
-:local chunkSize 4096
+# Read entire file (safe size for this list)
+:local content [/file get us.zone contents]
 
-:while ($offset < $fileSize) do={
-    :local chunk [/file read file=$fileName offset=$offset chunk-size=$chunkSize]
-    :set offset ($offset + $chunkSize)
+:local start 0
+:local end 0
 
-    :foreach line in=[:toarray $chunk] do={
-        :if ([:len $line] > 6) do={
-            /ip firewall address-list add list=$tmpList address=$line timeout=$ttl
-        }
+:while (true) do={
+    :set end [:find $content "\n" $start]
+
+    :if ($end = -1) do={
+        :set end [:len $content]
+    }
+
+    :local line [:pick $content $start $end]
+
+    # Basic sanity check (avoids blank lines)
+    :if ([:len $line] > 6) do={
+        /ip firewall address-list add list=$tmpList address=$line timeout=$ttl
+    }
+
+    :set start ($end + 1)
+
+    :if ($start >= [:len $content]) do={
+        :break
     }
 }
 
-:log info "Swapping US geo lists..."
+:log info "Loaded US list into temp"
 
-# Remove old list (important: clears stale entries)
+# Remove old list
 /ip firewall address-list remove [find list=$finalList]
 
-# Move temp → final
+# Move entries to final list
 :foreach i in=[/ip firewall address-list find list=$tmpList] do={
     /ip firewall address-list set $i list=$finalList
 }
 
-# Cleanup file
-/file remove $fileName
+# Cleanup
+/file remove us.zone
 
-:log info "US geo list update complete (RAM-only, 7d TTL)."
+:log info "US geo update complete (RAM-only, 7d TTL)"
